@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import simpleAction from '../actions/simpleAction';
 
-class App extends React.Component {
+class Login extends React.Component {
   constructor() {
     super();
     this.handleClick = this.handleClick.bind(this);
@@ -26,4 +26,4 @@ const mapStateToProps = state => ({
   ...state,
 });
 
-export default connect(mapStateToProps, { simpleAction })(App);
+export default connect(mapStateToProps, { simpleAction })(Login);
