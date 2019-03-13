@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import simpleAction from '../actions/simpleAction';
 
-class Login extends React.Component {
+export class Login extends React.Component {
   constructor() {
     super();
     this.handleClick = this.handleClick.bind(this);
