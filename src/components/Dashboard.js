@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import simpleAction from '../actions/simpleAction';
+import loginUser from '../actions/loginAction';
 
 export class Dashboard extends React.Component {
   constructor() {
@@ -9,7 +9,7 @@ export class Dashboard extends React.Component {
   }
 
   handleClick() {
-    this.props.simpleAction();
+    this.props.loginUser();
   }
 
   render() {
@@ -26,4 +26,4 @@ const mapStateToProps = state => ({
   ...state,
 });
 
-export default connect(mapStateToProps, { simpleAction })(Dashboard);
+export default connect(mapStateToProps, { loginUser })(Dashboard);

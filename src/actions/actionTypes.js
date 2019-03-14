@@ -1,5 +1,6 @@
 const actionTypes = {
-  SIMPLE_ACTION: 'SIMPLE_ACTION',
+  LOGIN_SUCCESSFUL: 'LOGIN_SUCCESSFUL',
+  LOGIN_FALIURE: 'LOGIN_FALIURE',
 };
 
 export default actionTypes;
