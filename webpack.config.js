@@ -2,6 +2,8 @@ const Dotenv = require('dotenv-webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const parentDir = path.join(__dirname, './');
+
 module.exports = {
   entry: ['./src/index.js'],
   output: {
@@ -20,6 +22,38 @@ module.exports = {
           loader: 'babel-loader',
         },
       },
+      {
+        test: /\.css$/,
+        loaders: [
+          'style-loader', 'css-loader',
+        ],
+      },
+      {
+        test: /\.scss$/,
+        loaders: [
+          'style-loader', 'css-loader', 'sass-loader',
+        ],
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2?)$/,
+        use: {
+          loader: 'file-loader',
+
+        },
+      },
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [
+          'file-loader',
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              bypassOnDebug: true, // webpack@1.x
+              disable: true, // webpack@2.x and newer
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
@@ -32,4 +66,8 @@ module.exports = {
       filename: './index.html',
     }),
   ],
+  devServer: {
+    contentBase: parentDir,
+    historyApiFallback: true,
+  },
 };
