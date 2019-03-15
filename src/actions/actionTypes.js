@@ -1,6 +1,7 @@
 const actionTypes = {
   LOGIN_SUCCESSFUL: 'LOGIN_SUCCESSFUL',
   LOGIN_FALIURE: 'LOGIN_FALIURE',
+  FETCH_ALL_PRODUCTS: 'FETCH_ALL_PRODUCTS',
 };
 
 export default actionTypes;
