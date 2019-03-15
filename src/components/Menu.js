@@ -24,7 +24,7 @@ export default class MenuHeader extends Component {
         </Menu.Item>
 
         <Menu.Item name="New Employee">
-          <NavLink to="/employee" exact>New Employee</NavLink>
+          <NavLink to="/register" exact>New Employee</NavLink>
         </Menu.Item>
 
         <Menu.Item position="right" name="Sign Out" onClick={this.handleClick}>
