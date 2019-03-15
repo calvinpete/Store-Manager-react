@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import { Login } from '../../src/components/Login';
+import { Register } from '../../src/components/Register';
 
 const props = {
   history: {
@@ -9,15 +9,15 @@ const props = {
   isSuccessful: false,
   error: 'dd',
   message: 'dd',
-  loginUser: jest.fn(),
+  registerUser: jest.fn(),
 };
 describe('Login', () => {
-  const wrapper = shallow(<Login {...props} />);
+  const wrapper = shallow(<Register {...props} />);
   it('should render without crashing', () => {
     expect(wrapper).toMatchSnapshot();
   });
   it('should call handleErrors', () => {
-    const wrapper = shallow(<Login {...props} />);
+    const wrapper = shallow(<Register {...props} />);
     wrapper.instance().handleErrors(props);
     expect(wrapper.instance().props.error).toBe(props.error);
   });
@@ -26,8 +26,10 @@ describe('Login', () => {
     const event = {
       target:
           {
-            email_address: 'address',
-            password: 'password',
+            name: 'dded',
+            email_address: 'asdsd',
+            password: 'ass',
+            account_type: 'sdsda',
 
           },
     };
@@ -39,15 +41,21 @@ describe('Login', () => {
       preventDefault: jest.fn(),
       target: [
         {
-          value: 'address',
+          value: 'de',
         },
         {
-          value: 'password',
+          value: 'pa',
+        },
+        {
+          value: 'as',
+        },
+        {
+          value: 'ord',
         },
       ],
     };
     wrapper.instance().handleSubmit(event);
-    expect(wrapper.instance().props.loginUser).toBeCalled();
+    expect(wrapper.instance().props.registerUser).toBeCalled();
   });
   it('should handle an error on failed login', () => {
     wrapper.setProps({
