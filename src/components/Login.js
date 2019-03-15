@@ -19,7 +19,7 @@ export class Login extends React.Component {
       this.handleErrors(nextProps);
     } else {
       toast.success(nextProps.message);
-      setTimeout(() => this.props.history.push('/Dashboard'));
+      setTimeout(() => this.props.history.push('/'));
     }
   }
 
